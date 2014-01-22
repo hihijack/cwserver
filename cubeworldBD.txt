@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 01 月 16 日 14:33
+-- 生成日期: 2014 年 01 月 22 日 14:51
 -- 服务器版本: 5.0.45
 -- PHP 版本: 5.2.5
 
@@ -12,8 +12,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- 数据库: `cubeworld`
 --
-CREATE DATABASE `cubeworld` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cubeworld`;
 
 -- --------------------------------------------------------
 
@@ -22,15 +20,35 @@ USE `cubeworld`;
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
   `name` varchar(10) NOT NULL,
   `worlddata` text,
+  `verify` tinyint(1) NOT NULL default '0' COMMENT '是否验证通过',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- 导出表中的数据 `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `worlddata`) VALUES
-(0, 'lhj', NULL);
+INSERT INTO `users` (`id`, `name`, `worlddata`, `verify`) VALUES
+(1, 'lhj', 'chest,0,1,0|cube,0,0,0|cube,0,0,-1|cube,0,0,-2|cube,0,0,-3|cube,0,0,-4|_0,1,-4', 0),
+(2, 'hihijack', 'chest,0,1,0|cube,0,0,0|cube,0,0,-1|cube,0,0,-2|cube,0,0,-3|cube,0,0,-4|_0,1,-4', 0),
+(3, 'lhj2', NULL, 0),
+(4, 'lhj3', NULL, 0),
+(5, 'lhj4', NULL, 0),
+(6, 'lhj5', NULL, 0),
+(7, 'lhj6', NULL, 0),
+(8, 'lhj7', NULL, 0),
+(9, 'lhj8', NULL, 0),
+(10, 'lhj9', NULL, 0),
+(11, 'lhj10', NULL, 0),
+(12, 'lhj11', NULL, 0),
+(13, 'lhj12', NULL, 0),
+(14, 'lhj13', NULL, 0),
+(15, 'lhj14', NULL, 0),
+(16, 'lhj15', NULL, 0),
+(17, 'lhj16', NULL, 0),
+(18, 'test', NULL, 0),
+(19, 'test00', NULL, 0),
+(20, 'test11', 'chest,0,1,0|cube,0,0,0|cube,0,0,-1|cube,0,0,-2|cube,0,0,-3|cube,0,0,-4|cube,0,0,-5|cube,0,0,-6|cube,0,0,-7|cube,1,0,-5|cube,2,0,-5|cube,3,0,-5|cube,3,0,-6|cube,3,0,-7|cube,2,0,-6|cube,2,0,-7|cube,2,0,-8|_0,1,-7', 1);
