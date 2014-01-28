@@ -10,7 +10,7 @@ if (!$con){
 
 mysql_select_db("cubeworld", $con);
 
-$sql = "UPDATE users SET verify = " . $verify . " where id = " . $playerid;
+$sql = "UPDATE users SET verify = " . $verify . ", version = version + 1 where id = " . $playerid;
 if(mysql_query($sql)){
 	$response = array("state" => 0);
 }else{
