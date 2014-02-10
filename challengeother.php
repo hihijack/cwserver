@@ -5,12 +5,7 @@
 $playerid = $_GET["playerid"];
 $targetid = $_GET["targetid"];
 
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
-
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 $sqlsuccess = true;
 if($playerid != $targetid){

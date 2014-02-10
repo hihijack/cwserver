@@ -1,12 +1,8 @@
 <?php
 // 取玩家列表
 //  {"players":[{"id":11, "name":"xxx"}]}
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
 
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 // 取玩家列表。最多10个
 $sql = "select id,name,allcount,passcount,version from users where verify = 1 order by rand() limit 10";

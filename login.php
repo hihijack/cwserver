@@ -2,12 +2,8 @@
 // 发送playerid
 // 响应{"state":0]} state:0成功，1失败
 $playerid = $_GET["playerid"];
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
 
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 $result = mysql_query("SELECT * FROM users WHERE id = " . $playerid . "");
 

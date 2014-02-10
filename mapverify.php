@@ -3,12 +3,8 @@
 // {"state":0} state:0 ³É¹¦£¬1£ºÊ§°Ü
 $playerid = $_GET["playerid"];
 $verify = $_GET["verify"];
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
 
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 $sql = "UPDATE users SET verify = " . $verify . ", version = version + 1 where id = " . $playerid;
 if(mysql_query($sql)){

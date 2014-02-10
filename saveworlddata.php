@@ -5,12 +5,7 @@
 $playerid = $_GET["playerid"];
 $worlddata = $_GET["worlddata"];
 
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
-
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 if(mysql_query("UPDATE users SET worlddata = '" . $worlddata ."',verify = 0  WHERE id = " . $playerid)){
 	$response = array("state" => 0);

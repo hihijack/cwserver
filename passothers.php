@@ -5,12 +5,8 @@
 $playerid = $_GET["playerid"];
 $targetid = $_GET["targetid"];
 $version = $_GET["version"];
-$con = mysql_connect("localhost","root","");
-if (!$con){
-  die('Could not connect: ' . mysql_error());
- }
 
-mysql_select_db("cubeworld", $con);
+include 'condb.php';
 
 $state = 1;
 $sql = "UPDATE users SET passcount = passcount + 1 WHERE id = " . $targetid;
